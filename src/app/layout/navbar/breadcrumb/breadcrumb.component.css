@@ -1,0 +1,10 @@
+.breadcrumb {
+    color: var(--gray-100);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-family-degular);
+    height: 48px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}

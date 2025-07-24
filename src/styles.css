@@ -76,6 +76,7 @@
     --font-family-ibm: 'IBM Plex Sans Arabic', sans-serif;
     --font-family-poppins: 'Poppins', sans-serif;
     --font-family-cairo: 'Cairo', sans-serif;
+    --font-family-degular: 'Degular', sans-serif;
 
     --font-size-xs: 10px;
     --font-size-sm: 12px;
@@ -87,6 +88,7 @@
     --font-size-3xl: 28px;
     --font-size-4xl: 32px;
 
+    --font-weight-thin: 200;
     --font-weight-regular: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
