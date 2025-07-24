@@ -1,9 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700&display=swap');
+
 :root {
     /* Colors */
     --color-white: #FFFFFF;
     --color-white-88: rgba(255, 255, 255, 0.88);
     --color-black: #000000;
+
+    --color-body: #F7F9FC;
 
     --bg-dark-primary: #000606;
     --bg-dark-secondary: #060606;
@@ -72,6 +75,7 @@
     --font-family-jakarta: 'Plus Jakarta Sans', sans-serif;
     --font-family-ibm: 'IBM Plex Sans Arabic', sans-serif;
     --font-family-poppins: 'Poppins', sans-serif;
+    --font-family-cairo: 'Cairo', sans-serif;
 
     --font-size-xs: 10px;
     --font-size-sm: 12px;
@@ -95,8 +99,9 @@
     --border-radius-lg: 8px;
     --border-radius-xl: 12px;
     --border-radius-2xl: 16px;
-    --border-radius-3xl: 24px;
-    --border-radius-4xl: 32px;
+    --border-radius-3xl: 20px;
+    --border-radius-4xl: 24px;
+    --border-radius-5xl: 32px;
     --border-radius-pill: 50px;
     --border-radius-full: 9999px;
 
@@ -127,4 +132,58 @@
     --transition-duration-normal: 300ms;
     --transition-duration-slow: 500ms;
     --transition-easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--color-body);
+}
+
+body,
+html {
+    height: 100%;
+    font-size: var(--font-size-md);
+    font-family: var(--font-family-cairo);
+    background-color: var(--color-body);
+    scroll-behavior: smooth;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background-color: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-body);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
 }
