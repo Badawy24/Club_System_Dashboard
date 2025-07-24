@@ -1,19 +1,18 @@
 <div class="layout-wrapper">
 
   <div class="sidebar-wrapper d-none d-md-block">
-    <div class="sidebar">
-      <h4>SIDEBAR</h4>
+    <div class="sidebar d-flex flex-column justify-content-between">
+      <app-sidebar></app-sidebar>
     </div>
   </div>
 
   <!-- Offcanvas Sidebar (mobile only) -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title">SIDEBAR</h5>
       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">
-      <!-- محتوى sidebar فى الموبايل -->
+      <app-sidebar></app-sidebar>
     </div>
   </div>
 

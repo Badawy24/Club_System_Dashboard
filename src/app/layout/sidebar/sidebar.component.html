@@ -1,1 +1,25 @@
-<p>sidebar works!</p>
+<!-- Logo -->
+<div class="px-0 pt-0 pb-0 px-md-4 pt-md-3 pb-md-4">
+  <img [src]="logo" alt="Logo" class="mb-4 mt-2 mt-md-3 mb-md-5" />
+</div>
+
+<!-- Navigation Items -->
+<ul class="nav flex-column gap-2">
+  <li class="nav-item" *ngFor="let item of currentMenuItems" (click)="onMenuItemClick(item)">
+    <a class="nav-link d-flex align-items-center"
+      [style.color]="userRole === 'admin' || !item.active ? 'var(--color-white)' : 'var(--primary)'"
+      [style.background]="item.active ? userRole === 'admin' ? 'var(--gradient-primary-horizontal)' : 'var(--color-white)' : 'transparent'"
+      [style.borderRadius]="item.active ? userRole === 'admin' ? 'var(--border-radius-xl)' : 'var(--border-radius-5xl)' : 'transparent'">
+      <img [src]="item.active && userRole != 'admin' ? iconsActive[getIconKey(item.icon)] : item.icon" width="20"
+        class="me-3" alt="{{ item.label }}" />
+      {{ item.label }}
+    </a>
+  </li>
+</ul>
+
+<!-- Balls decoration -->
+<div class="sidebar-balls d-block">
+  <img src="assets/sidebar-icons/football.png" class="ball ball-left" />
+  <img src="assets/sidebar-icons/basketball.png" class="ball ball-center" />
+  <img src="assets/sidebar-icons/tennisball.png" class="ball ball-right" />
+</div>
