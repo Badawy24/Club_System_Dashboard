@@ -107,4 +107,24 @@
     --border-width-thin: 1px;
     --border-width-md: 2px;
     --border-width-thick: 3px;
+
+    /*  Shadows  */
+    --shadow-subtle: 0px 4px 6px rgba(0, 0, 0, 0.02);
+    --shadow-soft: 6px 6px 54px rgba(0, 0, 0, 0.03);
+    --shadow-medium: 6px 6px 54px rgba(0, 0, 0, 0.05);
+    --shadow-strong: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    --shadow-inset-light: inset 0px 3px 4px rgba(255, 255, 255, 0.45);
+    --shadow-inset-complex: -2px 0px 4px rgba(255, 255, 255, 0.13), inset 0px 3px 4px rgba(255, 255, 255, 0.25);
+    --shadow-inset-subtle: inset 0px 2px 2px -1px rgba(74, 74, 104, 0.1);
+    --shadow-inset-figma: inset 0px 1.6185px 1.6185px -0.809249px rgba(74, 74, 104, 0.1);
+
+    --shadow-blue-focus: 0px 0px 4px rgba(0, 115, 185, 0.43);
+    --shadow-blue-glow: 0px 0px 11px rgba(0, 115, 185, 0.25);
+
+    /* Transitions/Animations  */
+    --transition-duration-fast: 150ms;
+    --transition-duration-normal: 300ms;
+    --transition-duration-slow: 500ms;
+    --transition-easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 }
