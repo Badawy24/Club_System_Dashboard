@@ -44,8 +44,8 @@ export class SidebarComponent implements OnInit {
   };
 
   // Role management - can be changed based on authentication
-  // userRole: string = 'club_manager'; // club_manager or admin
-  userRole: string = 'admin'; // club_manager or admin
+  userRole: string = 'club_manager'; // club_manager or admin
+  // userRole: string = 'admin'; // club_manager or admin
   
   // Menu items for admin role
   adminMenuItems: MenuItem[] = [

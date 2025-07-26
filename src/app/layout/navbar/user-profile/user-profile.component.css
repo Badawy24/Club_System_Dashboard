@@ -1,0 +1,44 @@
+.user-profile-large .username {
+    font-size: var(--font-size-base);
+}
+
+.user-profile-large .role {
+    font-size: var(--font-size-sm);
+    color: var(--surface-gray);
+}
+
+.arrow-user {
+    font-size: var(--font-size-sm);
+    color: var(--surface-gray);
+}
+
+.user-profile-large img,
+.user-profile-small img {
+    object-fit: cover;
+    border-radius: 50%;
+}
+.dropdown-menu{
+    border: none;
+    box-shadow: var(--shadow-strong) ;
+    border-radius: var(--border-radius-xl);
+    overflow: hidden;
+}
+.dropdown-item{
+    font-size: var(--font-size-base);
+    background-color: var(--surface-light);
+    border-radius: var(--border-radius-lg);
+    width: 95%;
+    padding: 5px;
+    margin: 5px;
+
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Optional: tighter padding on small screen */
+@media (max-width: 767.98px) {
+    .user-profile-small span {
+        font-size: var(--font-size-base);
+    }
+}

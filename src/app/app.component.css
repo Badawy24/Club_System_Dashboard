@@ -20,7 +20,7 @@
     overflow: hidden;
 }
 
-.offcanvas{
+.offcanvas {
     width: 260px;
     height: 100%;
     border-top-right-radius: var(--border-radius-3xl);
@@ -30,7 +30,7 @@
     overflow: hidden;
 }
 
-.fa-bars{
+.fa-bars {
     font-size: 1.5rem;
     color: var(--primary);
 }
@@ -64,11 +64,43 @@
     overflow: auto;
 }
 
-@media (max-width: 767.98px) {
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+    /* Sidebar */
+    .sidebar-wrapper {
+        padding: 0.5rem 0 0.5rem 0.5rem;
+    }
+
+    .sidebar {
+        width: 260px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* Sidebar */
+    .sidebar-wrapper {
+        padding: 0.3rem 0 0.3rem 0.3rem;
+    }
+
+    .sidebar {
+        width: 230px;
+    }
+
+    /* Topbar */
+    .topbar {
+        margin: 0rem 0.3rem 0.3rem;
+        padding: 1rem 1.5rem 0;
+    }
+}
+
+@media (max-width: 767px) {
     .sidebar-wrapper {
         display: none;
     }
+
     .topbar {
-        margin: 0.5rem 0rem 0.7rem;
+        margin: 0.5rem 0rem 0rem;
+        padding-bottom: 0 !important;
     }
 }

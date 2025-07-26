@@ -1,9 +1,32 @@
-<!-- User Info -->
-<div class="d-flex align-items-center gap-2 bg-white rounded-pill px-3 py-1 shadow-sm">
-    <img src="assets/sidebar-icons-active/trainer.svg" alt="user" class="rounded-circle" width="36" height="36">
-    <div class="d-flex flex-column justify-content-center">
-        <span class="fw-medium text-dark" style="font-size: 14px;">Alex meian</span>
-        <span class="text-muted" style="font-size: 12px;">Club manager</span>
+<div class="dropdown user-profile-large d-none d-md-flex align-items-center">
+    <div class="d-flex align-items-center gap-2 bg-white rounded-pill px-2 py-1 shadow-sm cursor-pointer"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="assets/cat.jpg" alt="user" class="rounded-circle" width="36" height="36">
+        <div class="d-flex flex-column justify-content-center">
+            <span class="fw-medium text-dark username">Alex meian</span>
+            <span class="role">Club Manager</span>
+        </div>
+        <i class="arrow-user fas fa-chevron-down"></i>
+
     </div>
-    <i class="fa-solid fa-caret-down" style="color: var(--surface-variant);"></i>
+
+    <!-- Dropdown -->
+    <ul class="dropdown-menu dropdown-menu-end mt-2">
+        <li><a class="dropdown-item" href="#">Edit profile info</a></li>
+        <li><a class="dropdown-item" href="#">Change password</a></li>
+    </ul>
+</div>
+
+<div class="dropdown user-profile-small d-flex d-md-none align-items-center">
+    <div class="d-flex align-items-center gap-2 bg-white rounded-pill px-2 py-1 shadow-sm cursor-pointer"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="assets/cat.jpg" alt="user" class="rounded-circle" width="34" height="34">
+        <span class="fw-medium text-dark username">Alex meian</span>
+        <i class="arrow-user fas fa-chevron-down small"></i>
+    </div>
+
+    <ul class="dropdown-menu dropdown-menu-end shadow-sm mt-2">
+        <li><a class="dropdown-item" href="#">Edit profile info</a></li>
+        <li><a class="dropdown-item" href="#">Change password</a></li>
+    </ul>
 </div>

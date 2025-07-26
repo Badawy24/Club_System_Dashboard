@@ -8,3 +8,26 @@
     display: flex;
     align-items: center;
 }
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+    .breadcrumb {
+        font-size: var(--font-size-xl);
+    }
+    
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .breadcrumb {
+        font-size: var(--font-size-xl);
+        
+    }
+}
+
+@media (max-width: 767px) {
+    .breadcrumb {
+        font-size: var(--font-size-l);
+    }
+    
+}

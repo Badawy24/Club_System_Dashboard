@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
+import { UserProfileComponent } from "./layout/navbar/user-profile/user-profile.component";
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,9 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
   imports: [
     RouterOutlet,
     SidebarComponent,
-    NavbarComponent
-  ],
+    NavbarComponent,
+    UserProfileComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
