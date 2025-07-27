@@ -1,0 +1,23 @@
+<app-table
+[title]="title"
+
+  [columns]="columns"
+  [data]="tableData"
+  [itemsPerPageInput]="7">
+
+  <ng-template #actionTemplate let-row>
+    <div class="dropdown action-dropdown">
+      <div class="dropdown-toggle action-trigger d-flex align-items-center gap-2"
+           data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="./assets/action.png" alt="actions" class="action-icon" />
+      </div>
+  
+      <ul class="dropdown-menu dropdown-menu-end animated-dropdown">
+        <li><a class="dropdown-item" href="#" (click)="view(row)">View</a></li>
+        <li><a class="dropdown-item text-danger" href="#" (click)="delete(row)">Delete</a></li>
+      </ul>
+    </div>
+  </ng-template>
+  
+  
+</app-table>

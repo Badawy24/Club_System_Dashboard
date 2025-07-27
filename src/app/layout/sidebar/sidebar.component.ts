@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 
 interface MenuItem {
   icon: string;
@@ -12,7 +12,7 @@ interface MenuItem {
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule,RouterLink,RouterLinkActive],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })
@@ -66,9 +66,9 @@ export class SidebarComponent implements OnInit {
     { icon: this.icons['dashboard'], label: 'Dashboard', route: '' },
     { icon: this.icons['trainer'], label: 'Trainers', route: '' },
     { icon: this.icons['session'], label: 'My session', route: '' },
-    { icon: this.icons['request'], label: 'Request', route: '' },
-    { icon: this.icons['orders'], label: 'Orders', route: '' },
-    { icon: this.icons['earning'], label: 'My earnings', route: '' },
+    { icon: this.icons['request'], label: 'Request', route: 'club/requests-list' },
+    { icon: this.icons['orders'], label: 'Orders', route: 'club/orders-list' },
+    { icon: this.icons['earning'], label: 'My earnings', route: 'club/transaction-history' },
     { icon: this.icons['sport'], label: 'Sports', route: '' },
     { icon: this.icons['logout'], label: 'Sign out', route: '' }
   ];

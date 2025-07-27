@@ -1,0 +1,112 @@
+<!-- Table Container with Figma Design -->
+<div class="table-container">
+  <!-- Table Header with Title and Status Filter -->
+  <div class="table-header">
+    <h2 class="table-title">{{ title }}</h2>
+    <div class="status-filter">
+      <select class="status-dropdown">
+        <option value="">Status</option>
+        <option value="done">Done</option>
+        <option value="accepted">Accepted</option>
+        <option value="canceled">Canceled</option>
+      </select>
+      <svg class="dropdown-icon" width="12" height="8" viewBox="0 0 12 8" fill="none">
+        <path d="M1 1.5L6 6.5L11 1.5" stroke="#666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Table Content -->
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th *ngFor="let col of columns" class="table-header-cell">{{ col.label }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of pagedData()" class="table-row">
+          <td *ngFor="let col of columns" class="table-cell">
+            <ng-container [ngSwitch]="col.key">
+          
+              <span *ngSwitchCase="'status'" class="status-badge"
+                [ngClass]="{
+                  'status-done': row[col.key] === 'Done',
+                  'status-pending': row[col.key] === 'Pending',
+                  'status-accepted': row[col.key] === 'Accepted',
+                  'status-canceled': row[col.key] === 'Canceled' || row[col.key] === 'Cancelled'
+                }">
+                {{ row[col.key] }}
+              </span>
+          
+              <ng-container *ngSwitchCase="'action'">
+                <ng-container *ngIf="actionTemplate; else defaultAction">
+                  <ng-container *ngTemplateOutlet="actionTemplate; context: { $implicit: row }"></ng-container>
+                </ng-container>
+                <ng-template #defaultAction>
+                  <button class="btn btn-sm btn-primary">Action</button>
+                </ng-template>
+              </ng-container>
+          
+              <span *ngSwitchDefault class="table-text">
+                {{ row[col.key] }}
+              </span>
+          
+            </ng-container>
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination - Exact Figma Layout -->
+  <div class="pagination-container" *ngIf="totalPages > 1">
+    <div class="show-result">
+      <span class="show-result-label">Show result:</span>
+      <div class="select-wrapper">
+        <select [ngModel]="itemsPerPage()" (ngModelChange)="onItemsPerPageChange($event)" class="items-per-page-select">
+          <option value="7">7</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+        
+        <svg class="select-icon" width="12" height="8" viewBox="0 0 12 8" fill="none">
+          <path d="M1 1.5L6 6.5L11 1.5" stroke="#666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+    
+    <nav aria-label="Table pagination" class="pagination-nav">
+      <ul class="pagination">
+        <li class="page-item" [class.disabled]="currentPage() === 1">
+          <a class="page-link nav-arrow" (click)="changePage(currentPage() - 1)" [attr.aria-disabled]="currentPage() === 1">
+            <svg width="6" height="10" viewBox="0 0 6 10" fill="none">
+              <path d="M5 9L1 5L5 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </li>
+        <li
+          class="page-item"
+          *ngFor="let page of getVisiblePages(); trackBy: trackByPage"
+          [class.active]="currentPage() === page"
+          [class.ellipsis]="page === -1"
+        >
+          <span *ngIf="page === -1" class="page-ellipsis">...</span>
+          <a *ngIf="page !== -1" class="page-link" (click)="changePage(page)" [attr.aria-current]="currentPage() === page ? 'page' : null">
+            {{ page }}
+          </a>
+        </li>
+        <li class="page-item" [class.disabled]="currentPage() === totalPages">
+          <a class="page-link nav-arrow" (click)="changePage(currentPage() + 1)" [attr.aria-disabled]="currentPage() === totalPages">
+            <svg width="6" height="10" viewBox="0 0 6 10" fill="none">
+              <path d="M1 1L5 5L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+

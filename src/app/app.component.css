@@ -45,8 +45,6 @@
 
 /* Content Box */
 .content-box {
-    background-color: var(--color-white);
-    margin: 0.7rem;
     border-radius: var(--border-radius-xl);
     padding: 1.5rem;
     overflow: hidden;

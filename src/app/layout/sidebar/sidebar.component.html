@@ -6,16 +6,23 @@
 <!-- Navigation Items -->
 <ul class="nav flex-column gap-1">
   <li class="nav-item" *ngFor="let item of currentMenuItems" (click)="onMenuItemClick(item)">
-    <a class="nav-link d-flex align-items-center"
-      [style.color]="userRole === 'admin' || !item.active ? 'var(--color-white)' : 'var(--primary)'"
-      [style.background]="item.active ? userRole === 'admin' ? 'var(--gradient-primary-horizontal)' : 'var(--color-white)' : 'transparent'"
-      [style.borderRadius]="item.active ? userRole === 'admin' ? 'var(--border-radius-xl)' : 'var(--border-radius-5xl)' : 'transparent'">
-      <img [src]="item.active && userRole != 'admin' ? iconsActive[getIconKey(item.icon)] : item.icon" width="20"
+
+    <a class="nav-link d-flex align-items-center" [routerLink]="item.route" routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }" #rla="routerLinkActive"
+      [style.color]="userRole === 'admin' || !rla.isActive ? 'var(--color-white)' : 'var(--primary)'"
+      [style.background]="rla.isActive ? (userRole === 'admin' ? 'var(--gradient-primary-horizontal)' : 'var(--color-white)') : 'transparent'"
+      [style.borderRadius]="rla.isActive ? (userRole === 'admin' ? 'var(--border-radius-xl)' : 'var(--border-radius-5xl)') : 'transparent'">
+
+      <img [src]="rla.isActive && userRole != 'admin' ? iconsActive[getIconKey(item.icon)] : item.icon" width="20"
         class="me-3" alt="{{ item.label }}" />
+
       {{ item.label }}
     </a>
+
   </li>
 </ul>
+
+
 
 <!-- Balls decoration -->
 <div class="sidebar-balls d-block">
