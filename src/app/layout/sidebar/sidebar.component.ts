@@ -44,8 +44,8 @@ export class SidebarComponent implements OnInit {
   };
 
   // Role management - can be changed based on authentication
-  userRole: string = 'club_manager'; // club_manager or admin
-  // userRole: string = 'admin'; // club_manager or admin
+  // userRole: string = 'club_manager'; // club_manager or admin
+  userRole: string = 'admin'; // club_manager or admin
   
   // Menu items for admin role
   adminMenuItems: MenuItem[] = [
@@ -53,10 +53,10 @@ export class SidebarComponent implements OnInit {
     { icon: this.icons['trainer'], label: 'Trainer Management', route: '' },
     { icon: this.icons['user'], label: 'Our Players', route: '' },
     { icon: this.icons['clubs'], label: 'Our Clubs', route: '' },
-    { icon: this.icons['orders'], label: 'Orders', route: '' },
     { icon: this.icons['sport'], label: 'Sports', route: '' },
-    { icon: this.icons['request'], label: 'Pricing List', route: '' },
-    { icon: this.icons['earning'], label: 'My earnings', route: '' },
+    { icon: this.icons['request'], label: 'Pricing List', route: 'admin/requests-list' },
+    { icon: this.icons['orders'], label: 'Orders', route: 'admin/orders-list' },
+    { icon: this.icons['earning'], label: 'My earnings', route: 'admin/transaction-history' },
     { icon: this.icons['logout'], label: 'Sign out', route: '' }
 
   ];
