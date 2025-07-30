@@ -1,0 +1,100 @@
+<div class="container py-5">
+  <div class="card rounded-4 shadow-sm p-4 mx-auto" style="max-width: 700px;">
+    <div class="text-center mb-4">
+      <img src="assets/logo.png" alt="SportyMate Logo" style="height: 50px;" />
+    </div>
+
+    <h4 class="fw-bold mb-1">Create an account</h4>
+    <p class="text-muted mb-4">Please fill this data to join with us</p>
+
+    <form>
+      <!-- Club Name & Email -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label">Club name</label>
+          <input type="text" class="form-control" placeholder="Enter your Club name" />
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" placeholder="Enter your email" />
+        </div>
+      </div>
+
+      <!-- Sports -->
+      <div class="mb-3">
+        <label class="form-label">Sports</label>
+        <input type="text" class="form-control" placeholder="Enter your club sports list" />
+      </div>
+
+      <!-- Club Type -->
+      <div class="mb-3">
+        <label class="form-label d-block">Club Type</label>
+        <div class="btn-group" role="group">
+          <input type="checkbox" class="btn-check" id="male" autocomplete="off" checked />
+          <label class="btn btn-outline-secondary" for="male">Male</label>
+
+          <input type="checkbox" class="btn-check" id="female" autocomplete="off" />
+          <label class="btn btn-outline-secondary" for="female">Female</label>
+
+          <input type="checkbox" class="btn-check" id="mix" autocomplete="off" />
+          <label class="btn btn-outline-secondary" for="mix">Mix</label>
+        </div>
+      </div>
+
+      <!-- Club Address -->
+      <div class="mb-3">
+        <label class="form-label">Club address</label>
+        <input type="text" class="form-control" placeholder="Enter your Club address" />
+      </div>
+
+      <!-- Days of Week -->
+      <div class="mb-3">
+        <label class="form-label d-block">Days of weeks</label>
+        <div class="d-flex flex-wrap gap-2">
+          <div *ngFor="let day of ['Sat','Sun','Mon','Tue','Wed','Thu','Fri']">
+            <button type="button" class="btn btn-outline-primary rounded-pill px-3">{{ day }}</button>
+          </div>
+          <div class="form-check d-flex align-items-center ms-3">
+            <input class="form-check-input me-1" type="checkbox" id="allDays" />
+            <label class="form-check-label small" for="allDays">Select all Days</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Time Pickers -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label">Start Time</label>
+          <input type="time" class="form-control" />
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">End Time</label>
+          <input type="time" class="form-control" />
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="mb-4">
+        <label class="form-label">Password</label>
+        <div class="input-group">
+          <span class="input-group-text bg-white"><i class="fas fa-lock"></i></span>
+          <input [type]="showPassword ? 'text' : 'password'" class="form-control" placeholder="••••••••" />
+          <span class="input-group-text bg-white" style="cursor: pointer;" (click)="togglePassword()">
+            <i class="fas" [ngClass]="showPassword ? 'fa-eye' : 'fa-eye-slash'"></i>
+          </span>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="d-grid mb-3">
+        <button type="submit" class="btn btn-primary py-2">Let’s start</button>
+      </div>
+
+      <!-- Login Redirect -->
+      <p class="text-center small">
+        Have an account?
+        <a href="#" class="fw-semibold text-decoration-none">Log in</a>
+      </p>
+    </form>
+  </div>
+</div>

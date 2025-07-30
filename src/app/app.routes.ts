@@ -7,6 +7,8 @@ import { TransactionHistoryComponent as TransactionHistoryClub} from './pages/cl
 import { OrderListComponent as OrderListAdmin} from './pages/admin/order-list/order-list.component';
 import { RequestListComponent as RequestListAdmin} from './pages/admin/request-list/request-list.component';
 import { TransactionHistoryComponent as TransactionHistoryAdmin} from './pages/admin/transaction-history/transaction-history.component';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { SignupComponent } from './pages/auth/signup/signup.component';
 
 export const routes: Routes = [
     // path: '', redirectTo: '/home', pathMatch: 'full'
@@ -19,6 +21,10 @@ export const routes: Routes = [
     {path:'admin/orders-list',component:OrderListAdmin},
     {path:'admin/requests-list',component:RequestListAdmin},
     {path:'admin/transaction-history',component:TransactionHistoryAdmin},
+
+    {path:'auth/login',component:LoginComponent},
+    {path:'auth/register',component:SignupComponent},
+
     
     { path: '**', redirectTo: '/dashboard', pathMatch: 'full' }
 ];
