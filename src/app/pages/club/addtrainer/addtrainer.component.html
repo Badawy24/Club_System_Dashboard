@@ -1,0 +1,41 @@
+<div class="modal-overlay">
+  <div class="modal-content">
+    <h5 class="fw-bold">Edit trainer info</h5>
+    <p class="text-secondary">Enter the following information to Edit the trainer info</p>
+    
+    <div class="row mb-2">
+      <div class="col">
+        <input type="text" placeholder="First Name *" class="form-control">
+      </div>
+      <div class="col">
+        <input type="text" placeholder="Last Name *" class="form-control">
+      </div>
+    </div>
+    
+    <div class="row mb-2">
+      <div class="col">
+        <select class="form-control">
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+      </div>
+      <div class="col">
+        <input type="number" placeholder="Age *" class="form-control">
+      </div>
+    </div>
+
+    <input type="text" placeholder="Phone *" class="form-control mb-2">
+    <input type="email" placeholder="Email *" class="form-control mb-2">
+
+    <div class="mb-2">
+      <label class="me-3">Transferable:</label> <br>
+      <input type="radio" name="transfer" id="yes" > <label for="yes" class="yes">yes</label>
+      <input type="radio" name="transfer" id="no"> <label for="no" class="no">no</label>
+    </div>
+
+    <input type="text" placeholder="Sports" class="form-control mb-3">
+
+    <button class=" w-100 mb-2">Add Trainer</button>
+    <button class="text-black bg-white w-100" (click)="closeModal()">Cancel</button>
+  </div>
+</div>

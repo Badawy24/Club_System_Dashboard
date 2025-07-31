@@ -1,0 +1,67 @@
+.card{
+    height: 300px;
+    background-image: url('../../../../assets/cardbg.png');
+    border-radius: 25px;
+    border: 1px solid #fff;
+}
+h5{
+    font-weight:700;
+}
+p{
+    font-weight:600;
+    font-size:12px;
+    color: #aaa;
+}
+
+.card .card-content {
+    color: var(--bg-surface-dark);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* أسود شفاف */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.card:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-overlay i {
+    font-size: 20px;
+    cursor: pointer;
+}
+.fa-trash-alt{
+    background-color:#FEE3E5 ;
+    color: #F64650;
+    padding: 10px;
+    border-radius: 8px;
+    width: 40px;
+}
+.fa-edit{
+    background-color:#D6E6FF ;
+    color: #2132B2;
+    padding: 10px;
+    border-radius: 8px;
+    width: 40px;
+}
+.button button{
+    background-color: var(--primary);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    width: 210px;
+    height: 50px;
+}
+.txt{
+    font-size: 22px;
+    font-weight: 400;
+}

@@ -9,6 +9,8 @@ import { RequestListComponent as RequestListAdmin} from './pages/admin/request-l
 import { TransactionHistoryComponent as TransactionHistoryAdmin} from './pages/admin/transaction-history/transaction-history.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { SignupComponent } from './pages/auth/signup/signup.component';
+import { TrainerComponent } from './pages/club/trainer/trainer.component';
+import { SportsComponent } from './pages/club/sports/sports.component';
 
 export const routes: Routes = [
     // path: '', redirectTo: '/home', pathMatch: 'full'
@@ -17,6 +19,10 @@ export const routes: Routes = [
     {path:'club/orders-list',component:OrderListClub},
     {path:'club/requests-list',component:RequestListClub},
     {path:'club/transaction-history',component:TransactionHistoryClub},
+    {path:'club/trainer',component:TrainerComponent},
+    {path:'club/sports',component:SportsComponent},
+
+
 
     {path:'admin/orders-list',component:OrderListAdmin},
     {path:'admin/requests-list',component:RequestListAdmin},

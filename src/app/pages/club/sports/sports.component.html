@@ -1,0 +1,79 @@
+<!-- trainer-list.component.html -->
+
+<div class="page-container">
+  <div class="content-card">
+    <!-- Header Row: Title and Button -->
+    <div class="header-row">
+      <div class="title-text">Trainer List</div>
+      <div class="button">
+        <!-- Add your Angular click event here, e.g., (click)="openModal()" -->
+        <button (click)="openModal()">Add New Sport</button>
+      </div>
+    </div>
+
+    <!-- Activities Grid Section -->
+    <div class="activities-grid">
+      <!-- Row 1 Items -->
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Football</span>
+      </div>
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Basketball</span>
+      </div>
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Tennis</span>
+      </div>
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Fitness</span>
+      </div>
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Padel</span>
+      </div>
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Karate</span>
+      </div>
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Boxing</span>
+      </div>
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Running</span>
+      </div>
+
+      <!-- Row 2 Items -->
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Football</span>
+      </div>
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Boxing</span>
+      </div>
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Karate</span>
+      </div>
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Running</span>
+      </div>
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Fitness</span>
+      </div>
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Football</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-addsports *ngIf="showModal" (close)="closeModal()"></app-addsports>
