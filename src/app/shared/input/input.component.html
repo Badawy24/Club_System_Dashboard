@@ -1,1 +1,26 @@
-<p>input works!</p>
+<div class="form-group mb-3">
+  <label *ngIf="label" class="form-label mb-0">{{ label }}</label>
+  <div class="input-group input-group-custom">
+    <span class="input-group-text">
+      <img [src]="icon"/>
+    </span>
+
+    <input
+      [type]="inputType"
+      class="form-control"
+      [placeholder]="placeholder"
+      [formControl]="control"
+    />
+
+    <!-- Show/hide eye icon only for password -->
+    <button
+      *ngIf="type === 'password'"
+      type="button"
+      class="btn btn-outline-secondary toggle-password"
+      (click)="togglePassword()"
+    >
+      <i class="fa-solid " [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+    </button>
+  </div>
+</div>
+

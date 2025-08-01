@@ -1,21 +1,28 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { SidebarComponent } from './layout/sidebar/sidebar.component';
-import { NavbarComponent } from './layout/navbar/navbar.component';
-import { UserProfileComponent } from "./layout/navbar/user-profile/user-profile.component";
+import { Router, RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    SidebarComponent,
-    NavbarComponent,
-    UserProfileComponent
-],
+    CommonModule
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  isLogin = false;
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    if (this.isLogin) {
+      this.router.navigate(['/dashboard']);
+    } else {
+      this.router.navigate(['/auth/login']);
+    }
+  }
   title = 'dashboard-app';
 }

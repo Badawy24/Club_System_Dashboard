@@ -17,7 +17,7 @@ interface MenuItem {
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent implements OnInit {
-  
+
   logo:string = "assets/logo.png";
 
   icons:{ [key: string]: string } = {
@@ -46,7 +46,7 @@ export class SidebarComponent implements OnInit {
   // Role management - can be changed based on authentication
   userRole: string = 'club_manager'; // club_manager or admin
   // userRole: string = 'admin'; // club_manager or admin
-  
+
   // Menu items for admin role
   adminMenuItems: MenuItem[] = [
     { icon: this.icons['dashboard'], label: 'Dashboard', route: '' },
@@ -89,7 +89,7 @@ export class SidebarComponent implements OnInit {
     if (this.userRole === 'admin') {
       this.currentMenuItems = this.adminMenuItems.map((item, index) => ({
         ...item,
-        active: index === 0 
+        active: index === 0
       }));
     } else if (this.userRole === 'club_manager') {
       this.currentMenuItems = this.clubManagerMenuItems.map((item, index) => ({

@@ -1,0 +1,20 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <app-input
+    [label]="'Email'"
+    [icon]="'assets/auth/envelope.svg'"
+    [type]="'email'"
+    [placeholder]="'Enter your email'"
+    [control]="emailControl"
+  ></app-input>
+
+  <app-input
+    [label]="'Password'"
+    [icon]="'assets/auth/lock.svg'"
+    [type]="'password'"
+    [placeholder]="'Enter your password'"
+    [control]="passwordControl"
+  ></app-input>
+    <button type="submit" class="btn btn-primary w-100">Login</button>
+
+  <!-- <app-button [label]="'Login'" [type]="'submit'"></app-button> -->
+</form>

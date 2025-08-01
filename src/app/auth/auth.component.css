@@ -1,0 +1,42 @@
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  background-image: url('/assets/auth/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.auth-box {
+  background-color: var(--color-white);
+  padding: 3rem;
+  margin: 0.5rem;
+  border-radius: var(--border-radius-3xl);
+  box-shadow: var(--shadow-subtle);
+  width: 100%;
+  max-width: 500px;
+}
+
+.logo-container {
+  text-align: center;
+  width: 70%;
+  margin: 0.5rem auto 1rem;
+  padding: 0.5rem;
+}
+
+.info{
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+.info h4{
+  font-weight: bolder;
+}
+
+.info p{
+  font-size: var(--font-size-base);
+  color: var(--gray-300);
+}
