@@ -17,6 +17,7 @@ import { AuthComponent } from './auth/auth.component';
 import { MainpageComponent } from './dashboard/mainpage/mainpage.component';
 import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
+import { ChangePasswordComponent } from './auth/change-password/change-password.component';
 
 
 export const routes: Routes = [
@@ -30,6 +31,7 @@ export const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'forget-password', component: ForgetPasswordComponent },
       { path: 'reset-password', component: ResetPasswordComponent },
+      { path: 'change-password', component: ChangePasswordComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
     ],
   },
