@@ -14,8 +14,9 @@
   background-color: var(--color-white);
   border: none;
 }
-label{
-  font-size: var(--font-size-base);
+label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
 }
 .form-control {
   border: none;
@@ -25,4 +26,8 @@ label{
 
 .toggle-password {
   border: none;
+}
+.toggle-password:hover{
+  background-color: var(--primary);
+  opacity: 0.;
 }

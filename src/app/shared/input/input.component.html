@@ -2,7 +2,7 @@
   <label *ngIf="label" class="form-label mb-0">{{ label }}</label>
   <div class="input-group input-group-custom">
     <span class="input-group-text">
-      <img [src]="icon"/>
+      <img [src]="icon" />
     </span>
 
     <input
@@ -19,8 +19,14 @@
       class="btn btn-outline-secondary toggle-password"
       (click)="togglePassword()"
     >
-      <i class="fa-solid " [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+      <i
+        class="fa-solid"
+        [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"
+      ></i>
     </button>
   </div>
+  
+  <small *ngIf="showError" class="text-danger mt-1 d-block">
+    {{ getErrorMessage() }}
+  </small>
 </div>
-

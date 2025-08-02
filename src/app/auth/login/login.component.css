@@ -1,0 +1,36 @@
+.info {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+.info h4 {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-2xl);
+}
+
+.info p {
+  font-size: var(--font-size-sm);
+  color: var(--gray-300);
+}
+
+.forget-pass {
+  display: block;
+  margin: 0 0 1.6rem;
+  padding-top: 0;
+  color: var(--primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  text-align: right;
+}
+
+.create-account {
+  text-align: center;
+  margin: 1rem;
+  color: var(--color-black);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+}
+
+.create-account a {
+  color: var(--primary);
+  text-decoration: underline;
+}

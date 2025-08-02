@@ -1,20 +1,37 @@
 <form [formGroup]="loginForm" (ngSubmit)="login()">
+  <div class="info">
+    <h4>Login to Account</h4>
+    <p>Please enter your email and password to continue</p>
+  </div>
+
   <app-input
     [label]="'Email'"
     [icon]="'assets/auth/envelope.svg'"
     [type]="'email'"
     [placeholder]="'Enter your email'"
     [control]="emailControl"
+    [errorMessages]="{
+    required: 'Email is required',
+    email: 'Please enter a valid email'
+  }"
   ></app-input>
 
   <app-input
     [label]="'Password'"
     [icon]="'assets/auth/lock.svg'"
     [type]="'password'"
-    [placeholder]="'Enter your password'"
+    [placeholder]="'..........'"
     [control]="passwordControl"
+    [errorMessages]="{
+    required: 'Password is required',
+    minlength: 'Password must be at least 6 characters'
+  }"
   ></app-input>
-    <button type="submit" class="btn btn-primary w-100">Login</button>
 
-  <!-- <app-button [label]="'Login'" [type]="'submit'"></app-button> -->
+  <a class="forget-pass" href="">Forget Password?</a>
+
+  <app-button label="Sign in"></app-button>
+
+  <p class="create-account">Don't have an account? <a href="">Create an account</a></p>
 </form>
+

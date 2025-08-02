@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  isLogin = true;
+  isLogin = false;
 
   constructor(private router: Router) {}
 

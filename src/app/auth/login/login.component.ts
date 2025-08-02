@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, FormControl, ReactiveFormsModule, Validators } 
 import { InputComponent } from '../../shared/input/input.component';
 import { ButtonComponent } from '../../shared/button/button.component';
 import { Router } from '@angular/router';
-import { AuthComponent } from '../auth.component';
 
 
 @Component({
@@ -14,7 +13,7 @@ import { AuthComponent } from '../auth.component';
     CommonModule,
     ReactiveFormsModule,
     InputComponent,
-    ButtonComponent,AuthComponent
+    ButtonComponent,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
@@ -22,18 +21,11 @@ import { AuthComponent } from '../auth.component';
 export class LoginComponent {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private route: Router, private auth: AuthComponent) {
+  constructor(private fb: FormBuilder, private route: Router) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
-  }
-
-  ngOnInit() {
-    this.auth.setInfoData(
-      'Login to Account',
-      'Please enter your email and password to continue'
-    );
   }
 
   get emailControl() {
@@ -49,4 +41,9 @@ export class LoginComponent {
       console.log(this.loginForm.value);
     }
   }
+
+  onSubmit() {
+    console.log('Form Values:', this.loginForm.value);
+  }
 }
+

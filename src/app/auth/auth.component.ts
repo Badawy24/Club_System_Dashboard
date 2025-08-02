@@ -11,12 +11,4 @@ import { LoginComponent } from './login/login.component';
   styleUrl: './auth.component.css'
 })
 export class AuthComponent {
-
-  title: string = '';
-  subtitle: string = '';
-
-  setInfoData(title: string, subtitle: string) {
-    this.title = title;
-    this.subtitle = subtitle;
-  }
 }
