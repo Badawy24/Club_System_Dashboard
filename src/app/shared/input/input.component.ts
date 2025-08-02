@@ -17,6 +17,7 @@ export class InputComponent {
   @Input() type: string = 'text';
   @Input() control!: FormControl;
   @Input() errorMessages: { [key: string]: string } = {};
+  @Input() customError: string = '';
 
   showPassword: boolean = false;
 
@@ -32,10 +33,17 @@ export class InputComponent {
   }
 
   get showError(): boolean {
-    return this.control?.invalid && (this.control?.dirty || this.control?.touched);
-  }
+  const hasControlError = this.control?.invalid && (this.control?.dirty || this.control?.touched);
+  const hasCustomError = !!this.customError && (this.control?.dirty || this.control?.touched);
+  return hasControlError || hasCustomError;
+}
+
 
   getErrorMessage(): string {
+    if (this.customError) {
+      return this.customError;
+    }
+
     if (!this.control?.errors) return '';
 
     for (let errorKey in this.control.errors) {
