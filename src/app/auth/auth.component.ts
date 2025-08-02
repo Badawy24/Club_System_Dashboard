@@ -1,12 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-
 @Component({
   selector: 'app-auth',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, LoginComponent],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.css'
 })

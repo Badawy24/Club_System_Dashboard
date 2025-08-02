@@ -15,6 +15,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthComponent } from './auth/auth.component';
 import { MainpageComponent } from './dashboard/mainpage/mainpage.component';
+import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
 
 
 export const routes: Routes = [
@@ -26,6 +27,7 @@ export const routes: Routes = [
     component: AuthComponent,
     children: [
       { path: 'login', component: LoginComponent },
+      { path: 'forget-password', component: ForgetPasswordComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
     ],
   },

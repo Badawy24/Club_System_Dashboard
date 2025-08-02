@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { InputComponent } from '../../shared/input/input.component';
 import { ButtonComponent } from '../../shared/button/button.component';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 
 @Component({
@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
     ReactiveFormsModule,
     InputComponent,
     ButtonComponent,
+    RouterLink
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
