@@ -1,0 +1,196 @@
+<form [formGroup]="signupForm" (ngSubmit)="signup()">
+  <div class="info">
+    <h4>Create an account</h4>
+    <p>Please Fill this data to join with us</p>
+  </div>
+
+  <div class="form-row">
+    <app-input
+      [label]="'Club name'"
+      [icon]="'assets/auth/club.svg'"
+      [type]="'text'"
+      [placeholder]="'Enter your Club name'"
+      [control]="clubNameControl"
+      [errorMessages]="{
+        required: 'Club name is required'
+      }"
+    ></app-input>
+
+    <app-input
+      [label]="'Email'"
+      [icon]="'assets/auth/envelope.svg'"
+      [type]="'email'"
+      [placeholder]="'Enter your email'"
+      [control]="emailControl"
+      [errorMessages]="{
+        required: 'Email is required',
+        email: 'Please enter a valid email'
+      }"
+    ></app-input>
+  </div>
+
+  <app-input
+    [label]="'Sports'"
+    [icon]="'assets/auth/sport.svg'"
+    [type]="'text'"
+    [placeholder]="'Enter your club sports list'"
+    [control]="sportsControl"
+    [errorMessages]="{
+      required: 'Sports is required'
+    }"
+  ></app-input>
+
+  <div class="club-type">
+    <label>Club Type</label>
+    <div class="checkbox-group">
+      <div class="checkbox-item" (click)="onItemClick($event, 'male')">
+        <input
+          type="checkbox"
+          id="male"
+          value="male"
+          [checked]="isChecked('male')"
+          (click)="$event.stopPropagation()"
+        />
+        <label for="male">Male</label>
+      </div>
+
+      <div class="checkbox-item" (click)="onItemClick($event, 'female')">
+        <input
+          type="checkbox"
+          id="female"
+          value="female"
+          [checked]="isChecked('female')"
+          (click)="$event.stopPropagation()"
+        />
+        <label for="female">Female</label>
+      </div>
+
+      <div class="checkbox-item" (click)="onItemClick($event, 'mix')">
+        <input
+          type="checkbox"
+          id="mix"
+          value="mix"
+          [checked]="isChecked('mix')"
+          (click)="$event.stopPropagation()"
+        />
+        <label for="mix">Mix</label>
+      </div>
+    </div>
+    <small
+      class="text-danger mt-1 d-block"
+      *ngIf="clubTypeArray.invalid && clubTypeArray.touched"
+    >
+      Club type is required
+    </small>
+  </div>
+
+  <app-input
+    [label]="'Club address'"
+    [icon]="'assets/auth/gps.svg'"
+    [type]="'text'"
+    [placeholder]="'Enter your Club address'"
+    [control]="clubAddressControl"
+    [errorMessages]="{
+      required: 'Club address is required'
+    }"
+  ></app-input>
+
+  <div class="days-section">
+    <label>Days of weeks</label>
+    <div class="days-grid">
+      <div
+        class="day-item"
+        *ngFor="let day of daysOfWeek"
+        [class.selected]="selectedDays.includes(day.value)"
+        (click)="toggleDay(day.value)"
+      >
+        {{ day.label }}
+      </div>
+      <label class="custom-checkbox">
+        <input
+          type="checkbox"
+          [checked]="allDaysSelected"
+          (change)="toggleAllDays()"
+        />
+        <span class="checkmark"></span>
+        <span class="label">Select All Days</span>
+      </label>
+    </div>
+  </div>
+
+  <div class="time-section">
+    <div class="time-group">
+      <label>Start Time</label>
+      <div class="time-input">
+        <select formControlName="startTimeHour">
+          <option value="">0:00</option>
+          <option *ngFor="let hour of hours" [value]="hour">
+            {{ hour }}:00
+          </option>
+        </select>
+        <div class="am-pm">
+          <button
+            type="button"
+            [class.active]="startTimeAmPm === 'AM'"
+            (click)="setStartTimeAmPm('AM')"
+          >
+            AM
+          </button>
+          <button
+            type="button"
+            [class.active]="startTimeAmPm === 'PM'"
+            (click)="setStartTimeAmPm('PM')"
+          >
+            PM
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-group">
+      <label>End Time</label>
+      <div class="time-input">
+        <select formControlName="endTimeHour">
+          <option value="">0:00</option>
+          <option *ngFor="let hour of hours" [value]="hour">
+            {{ hour }}:00
+          </option>
+        </select>
+        <div class="am-pm">
+          <button
+            type="button"
+            [class.active]="endTimeAmPm === 'AM'"
+            (click)="setEndTimeAmPm('AM')"
+          >
+            AM
+          </button>
+          <button
+            type="button"
+            [class.active]="endTimeAmPm === 'PM'"
+            (click)="setEndTimeAmPm('PM')"
+          >
+            PM
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-input
+    [label]="'Password'"
+    [icon]="'assets/auth/lock.svg'"
+    [type]="'password'"
+    [placeholder]="'..........'"
+    [control]="passwordControl"
+    [errorMessages]="{
+      required: 'Password is required',
+      minlength: 'Password must be at least 6 characters'
+    }"
+  ></app-input>
+
+  <app-button label="Let's start"></app-button>
+
+  <p class="login-link">
+    Have an account? <a routerLink="/auth/login">Log in</a>
+  </p>
+</form>

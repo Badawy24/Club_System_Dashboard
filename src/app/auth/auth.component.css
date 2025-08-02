@@ -2,9 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 
-  background-image: url('/assets/auth/bg.png');
+  background-image: url("/assets/auth/bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -18,7 +18,7 @@
   border-radius: var(--border-radius-3xl);
   box-shadow: var(--shadow-subtle);
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
 }
 
 .logo-container {
@@ -26,4 +26,14 @@
   width: 70%;
   margin: 0.5rem auto 1rem;
   padding: 0.5rem;
+}
+
+.signup-page .auth-box {
+  padding: 0 3rem;
+  margin: 0.1rem;
+}
+
+.signup-page .logo-container {
+  width: 60%;
+  margin: 0.2rem auto 0.2rem;
 }
