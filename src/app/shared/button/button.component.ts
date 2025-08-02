@@ -9,4 +9,5 @@ import { Component, Input } from '@angular/core';
 export class ButtonComponent {
   @Input() label: string = 'Submit';
   @Input() type: 'button' | 'submit' = 'submit';
+  @Input() disabled: boolean = false;
 }

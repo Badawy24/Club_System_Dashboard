@@ -19,6 +19,7 @@ import { ForgetPasswordComponent } from './auth/forget-password/forget-password.
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { ChangePasswordComponent } from './auth/change-password/change-password.component';
 import { ConfirmChangePasswordComponent } from './auth/confirm-change-password/confirm-change-password.component';
+import { VerificationComponent } from './auth/verification/verification.component';
 
 
 export const routes: Routes = [
@@ -34,6 +35,7 @@ export const routes: Routes = [
       { path: 'reset-password', component: ResetPasswordComponent },
       { path: 'change-password', component: ChangePasswordComponent },
       { path: 'confirm-change-password', component: ConfirmChangePasswordComponent },
+      { path: 'verifiy', component: VerificationComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
     ],
   },
