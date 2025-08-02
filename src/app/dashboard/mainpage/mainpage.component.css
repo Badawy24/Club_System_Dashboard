@@ -1,0 +1,170 @@
+.card{
+    width: 250px;
+    height: 100px;
+    gap: 10px;
+    opacity: 1;
+    border-radius: 14px;
+    padding-top: 18px;
+    padding-right: 43px;
+    padding-bottom: 24px;
+    padding-left: 18px;
+    border: 1px solid #fff;
+    transition: .5s;
+}
+.card:hover {
+  transform: scale(1.03);
+}
+.card-body{
+    padding: 0;
+}
+.card-img{
+    width: 62px;
+    height: 62px;
+    gap: 10px;
+    opacity: 1;
+    border-radius: 21px;
+    padding: 8px;
+    background-color: #E2B1332E;
+}
+.card-body h3{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 1%;
+    vertical-align: middle;
+    margin-top: 18px;
+}
+.card-body h3 span{
+    font-size: 12px;
+}
+.card-body h6{
+    font-size: 14px;
+}
+.card-body .txt{
+    margin-left: 12px;
+}
+.select{
+    width: 129px;
+    height: 34px;
+    gap: 10px;
+    opacity: 1;
+    border-radius: 17px;
+    padding-top: 2px;
+    padding-right: 14px;
+    padding-bottom: 2px;
+    padding-left: 14px;
+    font-size: 14px;
+}
+.select option{
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 1%;
+    vertical-align: middle;
+}
+
+/* Use a container for the whole page to center the content card */
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align to the top */
+  background-color: #f8fafc; /* Light background for the page */
+  width: 100%;
+}
+
+/* This is the main white card with rounded corners */
+.content-card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 4px;
+  width: 98%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+}
+
+/* Flex container for the header (title and button) */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px; /* Space between header and grid */
+}
+
+.title-text {
+  font-size: 22px;
+  font-weight: 500; /* Slightly bolder */
+  color: #1f2937;
+}
+
+
+
+/* The grid that holds all the activity items */
+.activities-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px ; /* Space between items */
+}
+
+/* Individual activity item (icon + label) */
+.activity-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  width: 120px; /* Give items a fixed width for better alignment */
+}
+
+.activity-item:hover {
+  transform: scale(1.05);
+}
+
+/* The circular background for the icon */
+.icon-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #F7F9FC; /* Light blue background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 36px;
+  color: #333;
+}
+
+.icon-circle img{
+    width: 80%;
+}
+
+/* The text label for the activity */
+.activity-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+.button button{
+    background-color: var(--primary);
+    color: #fff;
+    padding: 2px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    width: 190px;
+    height: 40px;
+}
+.txt{
+    font-size: 22px;
+    font-weight: 400;
+}
+.order-scaled-container{
+    height: 60px;
+}
+.order-scaled-container app-order-list {
+  display: inline-block;
+  transform: scale(0.63);
+  transform-origin: top left;
+  height: 100%;
+}
+

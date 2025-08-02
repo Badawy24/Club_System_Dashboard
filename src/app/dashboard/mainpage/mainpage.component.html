@@ -1,0 +1,124 @@
+<div class="container mb-4">
+  <div class="row align-items-center justify-content-between">
+    <div class="col-auto txt">Trainer List</div>
+    <div class="col-auto">
+      <select class="form-select select">
+        <option value="Last30days">Last 30 days</option>
+        <option value="football">Football</option>
+        <option value="basketball">Basketball</option>
+        <option value="tennis">Tennis</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3  mb-1">
+            <div class="card">
+                <div class="card-body d-flex">
+                <div class="card-img"><img src="../../../assets/gym-schedule-3d-icon-download-in-png-blend-fbx-gltf-file-formats--workout-plan-fitness-calendar-training-exercise-planner-tracker-and-pack-icons-12131.png" alt=""></div>
+                <div class="txt">
+                    <h6>Total revenue</h6>
+                    <h3>53,00989 <span>EGP</span> </h3>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3  mb-1">
+            <div class="card">
+                <div class="card-body d-flex">
+                <div class="card-img"><img src="../../../assets/gym-schedule-3d-icon-download-in-png-blend-fbx-gltf-file-formats--workout-plan-fitness-calendar-training-exercise-planner-tracker-and-pack-icons-12131.png" alt=""></div>
+                <div class="txt">
+                    <h6>Total revenue</h6>
+                    <h3>53,00989 <span>EGP</span> </h3>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3  mb-1">
+            <div class="card">
+                <div class="card-body d-flex">
+                <div class="card-img"><img src="../../../assets/gym-schedule-3d-icon-download-in-png-blend-fbx-gltf-file-formats--workout-plan-fitness-calendar-training-exercise-planner-tracker-and-pack-icons-12131.png" alt=""></div>
+                <div class="txt">
+                    <h6>Total revenue</h6>
+                    <h3>53,00989 <span>EGP</span> </h3>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3  mb-1">
+            <div class="card">
+                <div class="card-body d-flex">
+                <div class="card-img"><img src="../../../assets/gym-schedule-3d-icon-download-in-png-blend-fbx-gltf-file-formats--workout-plan-fitness-calendar-training-exercise-planner-tracker-and-pack-icons-12131.png" alt=""></div>
+                <div class="txt">
+                    <h6>Total revenue</h6>
+                    <h3>53,00989 <span>EGP</span> </h3>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-container mt-3">
+  <div class="content-card">
+    <div class="container mb-1">
+  <div class="row align-items-center justify-content-between">
+    <div class="col-auto txt">Sports</div>
+    <div class="col-auto button">
+      <button (click)="openModal()">Add New Sports</button>
+    </div>
+  </div>
+</div>
+    <!-- Activities Grid Section -->
+    <div class="activities-grid">
+      <!-- Row 1 Items -->
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Football</span>
+      </div>
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Football</span>
+      </div>
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Basketball</span>
+      </div>
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Tennis</span>
+      </div>
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Fitness</span>
+      </div>
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Padel</span>
+      </div>
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Karate</span>
+      </div>
+      <div class="activity-item">
+        <div class="icon-circle"><img src="../../../../assets/football 1.png" alt=""></div>
+        <span class="activity-label">Boxing</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+    <div class="row mt-2 g-0">
+        <div class="col-lg-7 ">
+            <div class="order-scaled-container">
+                 <app-order-list></app-order-list>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <app-progress-gauge></app-progress-gauge>
+        </div>
+    </div>
+</div>
+<app-addsports *ngIf="showModal" (close)="closeModal()"></app-addsports>
+

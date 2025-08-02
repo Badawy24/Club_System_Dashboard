@@ -63,7 +63,7 @@ export class SidebarComponent implements OnInit {
 
   // Menu items for club manager role
   clubManagerMenuItems: MenuItem[] = [
-    { icon: this.icons['dashboard'], label: 'Dashboard', route: '' },
+    { icon: this.icons['dashboard'], label: 'Dashboard', route: '/dashboard' },
     { icon: this.icons['trainer'], label: 'Trainers', route: 'club/trainer' },
     { icon: this.icons['session'], label: 'My session', route: '' },
     { icon: this.icons['request'], label: 'Request', route: 'club/requests-list' },

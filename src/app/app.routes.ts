@@ -14,6 +14,7 @@ import { TransactionHistoryComponent as TransactionHistoryAdmin } from './pages/
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthComponent } from './auth/auth.component';
+import { MainpageComponent } from './dashboard/mainpage/mainpage.component';
 
 
 export const routes: Routes = [
@@ -35,8 +36,8 @@ export const routes: Routes = [
     component: DashboardComponent,
     children: [
       // Club Routes
-      { path: '', component: DashboardComponent },
-      { path: 'dashboard', component: DashboardComponent },
+      { path: '', component: MainpageComponent },
+      // { path: 'dashboard', component: DashboardComponent },
       { path: 'club/orders-list', component: OrderListClub },
       { path: 'club/requests-list', component: RequestListClub },
       { path: 'club/transaction-history', component: TransactionHistoryClub },
