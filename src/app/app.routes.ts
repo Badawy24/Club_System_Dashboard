@@ -21,6 +21,7 @@ import { ChangePasswordComponent } from './auth/change-password/change-password.
 import { ConfirmChangePasswordComponent } from './auth/confirm-change-password/confirm-change-password.component';
 import { VerificationComponent } from './auth/verification/verification.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { LogoutComponent } from './auth/logout/logout.component';
 
 
 export const routes: Routes = [
@@ -38,6 +39,7 @@ export const routes: Routes = [
       { path: 'confirm-change-password', component: ConfirmChangePasswordComponent },
       { path: 'verify-otp', component: VerificationComponent },
       { path: 'signup', component: SignupComponent },
+      { path: 'logout', component: LogoutComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
     ],
   },

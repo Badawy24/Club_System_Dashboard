@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, FormControl, ReactiveFormsModule, Validators } 
 import { InputComponent } from '../../shared/input/input.component';
 import { ButtonComponent } from '../../shared/button/button.component';
 import { Router, RouterLink } from '@angular/router';
+import { AuthService } from '../../core/services/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -21,8 +23,13 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  loading: boolean = false;
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private authService: AuthService,
+    private toastr: ToastrService) {
 
-  constructor(private fb: FormBuilder, private route: Router) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -39,12 +46,35 @@ export class LoginComponent {
 
   login() {
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
+      this.loading = true;
+
+      const payload = {
+        login: this.loginForm.value.email,
+        password: this.loginForm.value.password,
+      };
+
+      this.authService.login(payload).subscribe({
+        next: (res: any) => {
+          this.loading = false;
+
+          if (res.success) {
+            localStorage.setItem('token', res.data.token);
+            this.toastr.success(res.message || 'Login successful');
+            this.router.navigate(['/dashboard']);
+          } else {
+            this.toastr.error(res.message || 'Login failed');
+          }
+        },
+        error: (err) => {
+          this.loading = false;
+          this.toastr.error(err.error?.message || 'Login failed');
+        }
+      });
     }
   }
 
   onSubmit() {
-    console.log('Form Values:', this.loginForm.value);
+    this.login();
   }
 }
 

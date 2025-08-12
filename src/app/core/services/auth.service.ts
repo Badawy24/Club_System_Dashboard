@@ -21,11 +21,11 @@ export class AuthService {
   }
 
   sendOtp(payload: any): Observable<any> {
-  return this.http.post(`${this.apiUrl}/send-otp`, payload);
-}
+    return this.http.post(`${this.apiUrl}/send-otp`, payload);
+  }
 
-  logout(): void {
-    localStorage.removeItem('token');
+  login(payload: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/login`, payload);
   }
 
 }

@@ -57,7 +57,7 @@ export class SidebarComponent implements OnInit {
     { icon: this.icons['request'], label: 'Pricing List', route: 'admin/requests-list' },
     { icon: this.icons['orders'], label: 'Orders', route: 'admin/orders-list' },
     { icon: this.icons['earning'], label: 'My earnings', route: 'admin/transaction-history' },
-    { icon: this.icons['logout'], label: 'Sign out', route: '' }
+    { icon: this.icons['logout'], label: 'Sign out', route: '/auth/logout' }
 
   ];
 
@@ -70,7 +70,7 @@ export class SidebarComponent implements OnInit {
     { icon: this.icons['orders'], label: 'Orders', route: 'club/orders-list' },
     { icon: this.icons['earning'], label: 'My earnings', route: 'club/transaction-history' },
     { icon: this.icons['sport'], label: 'Sports', route: 'club/sports' },
-    { icon: this.icons['logout'], label: 'Sign out', route: '' }
+    { icon: this.icons['logout'], label: 'Sign out', route: '/auth/logout' }
   ];
 
   currentMenuItems: MenuItem[] = [];

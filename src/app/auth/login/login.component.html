@@ -11,9 +11,9 @@
     [placeholder]="'Enter your email'"
     [control]="emailControl"
     [errorMessages]="{
-    required: 'Email is required',
-    email: 'Please enter a valid email'
-  }"
+      required: 'Email is required',
+      email: 'Please enter a valid email'
+    }"
   ></app-input>
 
   <app-input
@@ -23,15 +23,20 @@
     [placeholder]="'..........'"
     [control]="passwordControl"
     [errorMessages]="{
-    required: 'Password is required',
-    minlength: 'Password must be at least 6 characters'
-  }"
+      required: 'Password is required',
+      minlength: 'Password must be at least 6 characters'
+    }"
   ></app-input>
 
   <a class="forget-pass" routerLink="/auth/forget-password">Forget Password?</a>
 
-  <app-button label="Sign in"></app-button>
+  <app-button
+    label="Sign in"
+    [loading]="loading"
+    loadingText="Sending..."
+  ></app-button>
 
-  <p class="create-account">Don't have an account? <a routerLink="/auth/signup">Create an account</a></p>
+  <p class="create-account">
+    Don't have an account? <a routerLink="/auth/signup">Create an account</a>
+  </p>
 </form>
-
