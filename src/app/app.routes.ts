@@ -22,6 +22,7 @@ import { ConfirmChangePasswordComponent } from './auth/confirm-change-password/c
 import { VerificationComponent } from './auth/verification/verification.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LogoutComponent } from './auth/logout/logout.component';
+import { OtpForgetComponent } from './auth/otp-forget/otp-forget.component';
 
 
 export const routes: Routes = [
@@ -34,6 +35,7 @@ export const routes: Routes = [
     children: [
       { path: 'login', component: LoginComponent },
       { path: 'forget-password', component: ForgetPasswordComponent },
+      { path: 'forget-otp', component: OtpForgetComponent },
       { path: 'reset-password', component: ResetPasswordComponent },
       { path: 'change-password', component: ChangePasswordComponent },
       { path: 'confirm-change-password', component: ConfirmChangePasswordComponent },

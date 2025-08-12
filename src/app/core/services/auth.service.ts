@@ -28,4 +28,15 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}/login`, payload);
   }
 
+  forgotPassword(payload: { email: string }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/forgot-password`, payload);
+  }
+
+  verifyOtpPasswordReset(payload: { email: string; otp_code: string }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/verify-otp-password-reset`, payload);
+  }
+
+  resetPassword(payload: { reset_token: string; password: string; password_confirmation: string }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/reset-password`, payload);
+  }
 }
