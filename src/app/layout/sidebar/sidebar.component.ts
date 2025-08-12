@@ -44,8 +44,8 @@ export class SidebarComponent implements OnInit {
   };
 
   // Role management - can be changed based on authentication
-  userRole: string = 'club_manager'; // club_manager or admin
-  // userRole: string = 'admin'; // club_manager or admin
+  userRole: string = 'club'; // club or admin
+  // userRole: string = 'admin'; // club or admin
 
   // Menu items for admin role
   adminMenuItems: MenuItem[] = [
@@ -91,7 +91,7 @@ export class SidebarComponent implements OnInit {
         ...item,
         active: index === 0
       }));
-    } else if (this.userRole === 'club_manager') {
+    } else if (this.userRole === 'club') {
       this.currentMenuItems = this.clubManagerMenuItems.map((item, index) => ({
         ...item,
         active: index === 0

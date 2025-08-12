@@ -59,7 +59,15 @@ export class LoginComponent {
 
           if (res.success) {
             localStorage.setItem('token', res.data.token);
+
+            const encryptedType = btoa(res.data.user.type);
+            localStorage.setItem('user_type', encryptedType);
+
+            const encryptedId = btoa(res.data.user.id.toString());
+            localStorage.setItem('user_temp_id', encryptedId);
+
             this.toastr.success(res.message || 'Login successful');
+
             this.router.navigate(['/dashboard']);
           } else {
             this.toastr.error(res.message || 'Login failed');

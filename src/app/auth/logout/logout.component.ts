@@ -13,8 +13,9 @@ export class LogoutComponent {
   ngOnInit() {
     localStorage.removeItem('token');
     localStorage.removeItem('user_temp_email');
+    localStorage.removeItem('user_temp_id');
+    localStorage.removeItem('user_type');
     this.router.navigate(['/auth/login']);
   }
-
 }
 

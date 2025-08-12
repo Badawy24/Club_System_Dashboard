@@ -20,5 +20,12 @@ import { UserProfileComponent } from '../layout/navbar/user-profile/user-profile
 })
 export class DashboardComponent {
   title = 'dashboard-app';
+   userType: string | null = null;
 
+  ngOnInit() {
+    const encryptedType = localStorage.getItem('user_type');
+    if (encryptedType) {
+      this.userType = atob(encryptedType);
+    }
+  }
 }
