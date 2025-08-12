@@ -12,6 +12,8 @@ import { Router, RouterLink } from '@angular/router';
 import { InputComponent } from '../../shared/input/input.component';
 import { ButtonComponent } from '../../shared/button/button.component';
 import { minSelectedCheckboxes } from '../../validators/min-selected-checkboxes.validator';
+import { AuthService } from '../../core/services/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signup',
@@ -32,20 +34,27 @@ export class SignupComponent {
   allDaysSelected: boolean = false;
   startTimeAmPm: string = 'AM';
   endTimeAmPm: string = 'AM';
+  loading = false;
+
 
   daysOfWeek = [
-    { label: 'Sat', value: 'saturday' },
-    { label: 'Sun', value: 'sunday' },
-    { label: 'Mon', value: 'monday' },
-    { label: 'Tue', value: 'tuesday' },
-    { label: 'Wed', value: 'wednesday' },
-    { label: 'Thu', value: 'thursday' },
-    { label: 'Fri', value: 'friday' }
+    { label: 'Sat', value: 'Saturday' },
+    { label: 'Sun', value: 'Sunday' },
+    { label: 'Mon', value: 'Monday' },
+    { label: 'Tue', value: 'Tuesday' },
+    { label: 'Wed', value: 'Wednesday' },
+    { label: 'Thu', value: 'Thursday' },
+    { label: 'Fri', value: 'Friday' }
   ];
 
   hours = Array.from({ length: 12 }, (_, i) => i + 1);
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private authService: AuthService,
+    private toastr: ToastrService
+  ) {
     this.signupForm = this.fb.group({
       clubName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
@@ -145,6 +154,17 @@ export class SignupComponent {
     this.endTimeAmPm = period;
   }
 
+  private convertTo24Hour(hour: number, ampm: string): string {
+    if (ampm === 'PM' && hour !== 12) {
+      hour += 12;
+    }
+    if (ampm === 'AM' && hour === 12) {
+      hour = 0;
+    }
+    return `${hour.toString().padStart(2, '0')}:00`;
+  }
+
+
   // --- Form Submission ---
   onSubmit() {
     this.signup();
@@ -152,20 +172,53 @@ export class SignupComponent {
 
   signup() {
     if (this.signupForm.valid && this.selectedDays.length > 0) {
-      const formData = {
-        ...this.signupForm.value,
-        clubType: this.clubTypeArray.value,
-        selectedDays: this.selectedDays,
-        startTimeAmPm: this.startTimeAmPm,
-        endTimeAmPm: this.endTimeAmPm
+      this.loading = true;
+      const startHour24 = this.convertTo24Hour(
+        +this.signupForm.value.startTimeHour,
+        this.startTimeAmPm
+      );
+
+      const endHour24 = this.convertTo24Hour(
+        +this.signupForm.value.endTimeHour,
+        this.endTimeAmPm
+      );
+
+      const sportsArray = this.signupForm.value.sports
+        .split(',')
+        .map((sport: string) => sport.trim())
+        .filter((sport: string) => sport.length > 0);
+
+      const payload = {
+        club_name: [this.signupForm.value.clubName],
+        email: this.signupForm.value.email,
+        sports: sportsArray,
+        club_type: this.clubTypeArray.value.length === 1 ? this.clubTypeArray.value[0] : 'mixed',
+        club_address: [this.signupForm.value.clubAddress],
+        days_of_weeks: this.selectedDays,
+        start_time: startHour24,
+        end_time: endHour24,
+        password: this.signupForm.value.password,
+        type: 'club',
       };
-      console.log('Signup Data:', formData);
+
+      this.authService.register(payload).subscribe({
+        next: (res) => {
+          this.loading = false;
+          if (res.success) {
+            this.router.navigate(['/auth/verify-otp'], {
+              queryParams: { email: payload.email, showSuccess: true }
+            });
+          }
+        },
+        error: (err) => {
+          this.loading = false;
+          this.toastr.error(err.error?.message || 'Registration failed');
+        }
+      });
     } else {
-      console.log('Form is invalid or no days selected');
       this.markFormGroupTouched();
     }
   }
-
   private markFormGroupTouched() {
     Object.keys(this.signupForm.controls).forEach(key => {
       const control = this.signupForm.get(key);

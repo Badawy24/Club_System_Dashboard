@@ -33,51 +33,48 @@
     [label]="'Sports'"
     [icon]="'assets/auth/sport.svg'"
     [type]="'text'"
-    [placeholder]="'Enter your club sports list'"
+    [placeholder]="'Enter your club sports list ex: football, basketball'"
     [control]="sportsControl"
     [errorMessages]="{
       required: 'Sports is required'
     }"
   ></app-input>
 
-  <div class="club-type">
+  <div class="club-type" formArrayName="clubType">
     <label>Club Type</label>
     <div class="checkbox-group">
-      <div class="checkbox-item" (click)="onItemClick($event, 'male')">
+      <div class="checkbox-item">
         <input
           type="checkbox"
-          id="male"
-          value="male"
+          [value]="'male'"
+          (change)="onCheckboxChange($event)"
           [checked]="isChecked('male')"
-          (click)="$event.stopPropagation()"
         />
-        <label for="male">Male</label>
+        <label>Male</label>
       </div>
 
-      <div class="checkbox-item" (click)="onItemClick($event, 'female')">
+      <div class="checkbox-item">
         <input
           type="checkbox"
-          id="female"
-          value="female"
+          [value]="'female'"
+          (change)="onCheckboxChange($event)"
           [checked]="isChecked('female')"
-          (click)="$event.stopPropagation()"
         />
-        <label for="female">Female</label>
+        <label>Female</label>
       </div>
 
-      <div class="checkbox-item" (click)="onItemClick($event, 'mix')">
+      <div class="checkbox-item">
         <input
           type="checkbox"
-          id="mix"
-          value="mix"
+          [value]="'mix'"
+          (change)="onCheckboxChange($event)"
           [checked]="isChecked('mix')"
-          (click)="$event.stopPropagation()"
         />
-        <label for="mix">Mix</label>
+        <label>Mix</label>
       </div>
     </div>
     <small
-      class="text-danger mt-1 d-block"
+      class="text-danger"
       *ngIf="clubTypeArray.invalid && clubTypeArray.touched"
     >
       Club type is required
@@ -123,7 +120,7 @@
       <label>Start Time</label>
       <div class="time-input">
         <select formControlName="startTimeHour">
-          <option value="">0:00</option>
+          <option value="" disabled>00:00</option>
           <option *ngFor="let hour of hours" [value]="hour">
             {{ hour }}:00
           </option>
@@ -151,7 +148,7 @@
       <label>End Time</label>
       <div class="time-input">
         <select formControlName="endTimeHour">
-          <option value="">0:00</option>
+          <option value="" disabled>00:00</option>
           <option *ngFor="let hour of hours" [value]="hour">
             {{ hour }}:00
           </option>
@@ -188,7 +185,11 @@
     }"
   ></app-input>
 
-  <app-button label="Let's start"></app-button>
+  <app-button
+    label="Let's start"
+    [loading]="loading"
+    loadingText="Registering..."
+  ></app-button>
 
   <p class="login-link">
     Have an account? <a routerLink="/auth/login">Log in</a>

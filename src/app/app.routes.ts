@@ -36,7 +36,7 @@ export const routes: Routes = [
       { path: 'reset-password', component: ResetPasswordComponent },
       { path: 'change-password', component: ChangePasswordComponent },
       { path: 'confirm-change-password', component: ConfirmChangePasswordComponent },
-      { path: 'verifiy', component: VerificationComponent },
+      { path: 'verify-otp', component: VerificationComponent },
       { path: 'signup', component: SignupComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
     ],

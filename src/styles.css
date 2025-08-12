@@ -190,3 +190,33 @@ img {
     border: 2px solid transparent;
     background-clip: content-box;
 }
+
+.toast-top-center {
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.toast-container .ngx-toastr {
+  width: 400px !important;
+}
+
+.toast-success {
+  background-color: var(--badge-accepted) !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+.toast-error {
+  background-color: var(--accent-red) !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+.toast-title {
+  font-size: var(--font-size-lg);
+}
+
+.toast-message {
+  font-size: var(--font-size-md);
+}

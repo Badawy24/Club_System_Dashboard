@@ -1,3 +1,8 @@
-<button [type]="type" class="auth-btn" [disabled]="disabled">
-  {{ label }}
+<button [type]="type" class="auth-btn" [disabled]="disabled || loading">
+  <ng-container *ngIf="!loading">
+    {{ label }}
+  </ng-container>
+  <ng-container *ngIf="loading">
+    <span class="spinner"></span> {{ loadingText }}
+  </ng-container>
 </button>

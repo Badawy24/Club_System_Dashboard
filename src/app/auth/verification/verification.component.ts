@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ButtonComponent } from '../../shared/button/button.component';
 
+import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-verification',
   standalone: true,
@@ -21,7 +24,10 @@ export class VerificationComponent {
   countdown: number = 59;
   interval: any;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private route: ActivatedRoute,
+    private toastr: ToastrService) {
     this.codeForm = this.fb.group({
       code1: ['', [Validators.required, Validators.maxLength(1)]],
       code2: ['', [Validators.required, Validators.maxLength(1)]],
@@ -30,6 +36,12 @@ export class VerificationComponent {
     });
 
     this.startCountdown();
+
+    this.route.queryParams.subscribe(params => {
+      if (params['showSuccess']) {
+        this.toastr.success("Please check your email");
+      }
+    });
   }
 
   startCountdown() {
@@ -95,3 +107,4 @@ export class VerificationComponent {
     console.log('Resend code triggered');
   }
 }
+
