@@ -205,8 +205,11 @@ export class SignupComponent {
         next: (res) => {
           this.loading = false;
           if (res.success) {
+            const encryptedId = btoa(res.data.user.id.toString());
+            localStorage.setItem('user_temp_id', encryptedId);
+            localStorage.setItem('user_temp_email', res.data.user.email);
             this.router.navigate(['/auth/verify-otp'], {
-              queryParams: { email: payload.email, showSuccess: true }
+              queryParams: { showSuccess: true }
             });
           }
         },

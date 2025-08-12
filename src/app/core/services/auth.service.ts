@@ -16,6 +16,14 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}/register`, payload);
   }
 
+  verifyOtp(payload: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/verify-otp`, payload);
+  }
+
+  sendOtp(payload: any): Observable<any> {
+  return this.http.post(`${this.apiUrl}/send-otp`, payload);
+}
+
   logout(): void {
     localStorage.removeItem('token');
   }

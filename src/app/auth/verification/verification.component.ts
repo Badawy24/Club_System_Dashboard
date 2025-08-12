@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ButtonComponent } from '../../shared/button/button.component';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-
+import { AuthService } from '../../core/services/auth.service';
 @Component({
   selector: 'app-verification',
   standalone: true,
@@ -21,13 +21,18 @@ import { ToastrService } from 'ngx-toastr';
 export class VerificationComponent {
 
   codeForm: FormGroup;
-  countdown: number = 59;
+  countdown: number = 30;
   interval: any;
+  userEmail: any = localStorage.getItem('user_temp_email');
+  loading: boolean = false;
 
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
-    private toastr: ToastrService) {
+    private toastr: ToastrService,
+    private authService: AuthService,
+    private router: Router
+  ) {
     this.codeForm = this.fb.group({
       code1: ['', [Validators.required, Validators.maxLength(1)]],
       code2: ['', [Validators.required, Validators.maxLength(1)]],
@@ -93,18 +98,72 @@ export class VerificationComponent {
 
   onSubmit() {
     if (this.codeForm.valid) {
-      console.log('Full code:', this.fullCode);
+      this.loading = true;
+      const otpCode = this.fullCode;
+
+      const encryptedId = localStorage.getItem('user_temp_id');
+      if (!encryptedId) {
+        this.toastr.error("User ID not found. Please register again.");
+        return;
+      }
+
+      const userId = parseInt(atob(encryptedId), 10);
+
+      const payload = {
+        user_id: userId,
+        otp_code: otpCode
+      };
+
+      this.authService.verifyOtp(payload).subscribe({
+        next: (res: any) => {
+          this.loading = false;
+          if (res.success) {
+            this.toastr.success(res.message || 'Account verified successfully');
+            localStorage.removeItem('user_temp_id');
+            this.router.navigate(['/auth/login'], {
+              queryParams: { showSuccess: true }
+            });
+          } else {
+            this.toastr.error('OTP verification failed');
+          }
+        },
+        error: (err: any) => {
+          this.loading = false;
+          this.toastr.error('OTP verification Incorrect');
+        }
+      });
+
     } else {
-      console.log('Form valid:', this.codeForm.valid);
       this.codeForm.markAllAsTouched();
     }
   }
 
+  resendCode(event: Event) {
+    event.preventDefault();
+    const email = localStorage.getItem('user_temp_email');
 
-  resendCode() {
-    this.countdown = 59;
-    this.startCountdown();
-    console.log('Resend code triggered');
+    if (!email) {
+      this.toastr.error("Email not found. Please register again.");
+      return;
+    }
+
+    this.authService.sendOtp({ channel: 'email', email }).subscribe({
+      next: (res: any) => {
+        if (res.success) {
+          this.toastr.success(res.message || 'OTP resent successfully');
+          this.countdown = 59;
+          clearInterval(this.interval);
+          this.startCountdown();
+        } else {
+          this.toastr.error(res.message || 'Failed to resend OTP');
+        }
+      },
+      error: (err: any) => {
+        this.toastr.error(err.error?.message || 'Something went wrong');
+      }
+    });
   }
+
+
 }
 

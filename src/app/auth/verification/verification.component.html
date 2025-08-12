@@ -1,47 +1,51 @@
-<form [formGroup]="codeForm" (ngSubmit)="onSubmit()">
-  <div class="info">
-    <h4>Enter your Verification Code</h4>
-    <p class="mt-4">
-      we have sent you 4 digit code via email to <span>emailgmial.com</span>
+  <form [formGroup]="codeForm" (ngSubmit)="onSubmit()">
+    <div class="info">
+      <h4>Enter your Verification Code</h4>
+      <p class="mt-4">
+        we have sent you 4 digit code via email to <span>{{userEmail}}</span>
+      </p>
+    </div>
+
+    <div class="code-inputs">
+      <input
+        type="text"
+        maxlength="1"
+        formControlName="code1"
+        (input)="onCodeInput($event)"
+        (keydown)="onKeyDown($event)"
+      />
+      <input
+        type="text"
+        maxlength="1"
+        formControlName="code2"
+        (input)="onCodeInput($event)"
+        (keydown)="onKeyDown($event)"
+      />
+      <input
+        type="text"
+        maxlength="1"
+        formControlName="code3"
+        (input)="onCodeInput($event)"
+        (keydown)="onKeyDown($event)"
+      />
+      <input
+        type="text"
+        maxlength="1"
+        formControlName="code4"
+        (input)="onCodeInput($event)"
+        (keydown)="onKeyDown($event)"
+      />
+    </div>
+
+    <p class="resend mb-4">
+      Don't receive the Code?
+      <span *ngIf="countdown > 0">Resend the Code</span> in
+      {{ countdown }} Seconds
+      <a *ngIf="countdown === 0" href="#" (click)="resendCode($event)">Resend Code</a>
     </p>
-  </div>
-
-  <div class="code-inputs">
-    <input
-      type="text"
-      maxlength="1"
-      formControlName="code1"
-      (input)="onCodeInput($event)"
-      (keydown)="onKeyDown($event)"
-    />
-    <input
-      type="text"
-      maxlength="1"
-      formControlName="code2"
-      (input)="onCodeInput($event)"
-      (keydown)="onKeyDown($event)"
-    />
-    <input
-      type="text"
-      maxlength="1"
-      formControlName="code3"
-      (input)="onCodeInput($event)"
-      (keydown)="onKeyDown($event)"
-    />
-    <input
-      type="text"
-      maxlength="1"
-      formControlName="code4"
-      (input)="onCodeInput($event)"
-      (keydown)="onKeyDown($event)"
-    />
-  </div>
-
-  <p class="resend mb-4">
-    Don't receive the Code?
-    <span *ngIf="countdown > 0">Resend the Code</span> in
-    {{ countdown }} Seconds
-    <a *ngIf="countdown === 0" href="#" (click)="resendCode()">Resend Code</a>
-  </p>
-  <app-button label="Next" [disabled]="!isFormValid"></app-button>
-</form>
+    <app-button
+    label="Next"
+    [loading]="loading"
+    loadingText="Sending..."
+    [disabled]="!isFormValid"></app-button>
+  </form>

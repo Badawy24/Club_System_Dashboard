@@ -13,16 +13,16 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  isLogin = false;
+  // isLogin = false;
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {
-    if (this.isLogin) {
-      this.router.navigate(['/dashboard']);
-    } else {
-      this.router.navigate(['/auth/login']);
-    }
-  }
+  // ngOnInit(): void {
+  //   if (this.isLogin) {
+  //     this.router.navigate(['/dashboard']);
+  //   } else {
+  //     this.router.navigate(['/auth/login']);
+  //   }
+  // }
   title = 'dashboard-app';
 }
