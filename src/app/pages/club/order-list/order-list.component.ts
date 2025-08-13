@@ -17,7 +17,7 @@ export class OrderListComponent {
     { key: 'sport', label: 'Sport Type' },
     { key: 'date', label: 'Due Date' },
     { key: 'amount', label: 'Total Amount' },
-    { key: 'status', label: 'Status' }
+    { key: 'statusOrder', label: 'Status' }
   ];
 
   tableData = [
@@ -28,7 +28,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Accepted'
+      statusOrder: 'Accepted'
 
     },
     {
@@ -38,7 +38,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -47,7 +47,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Pending'
+      statusOrder: 'Pending'
     },
     {
       id: '#12344477',
@@ -56,7 +56,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Canceled'
+      statusOrder: 'Canceled'
     },
     {
       id: '#12344477',
@@ -65,7 +65,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -74,7 +74,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -83,7 +83,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -92,7 +92,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -101,7 +101,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Pending'
+      statusOrder: 'Pending'
     },
     {
       id: '#12344477',
@@ -110,7 +110,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -119,7 +119,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -128,7 +128,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -137,7 +137,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -146,7 +146,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -155,7 +155,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -164,7 +164,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -173,7 +173,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -182,7 +182,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -191,7 +191,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -200,7 +200,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -209,7 +209,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -218,7 +218,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -227,7 +227,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -236,7 +236,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -245,7 +245,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -254,7 +254,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -263,7 +263,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -272,7 +272,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -281,7 +281,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -290,7 +290,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -299,7 +299,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -308,7 +308,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -317,7 +317,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -326,7 +326,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -335,7 +335,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -344,7 +344,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -353,7 +353,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -362,7 +362,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -371,7 +371,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -380,7 +380,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -389,7 +389,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -398,7 +398,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -407,7 +407,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -416,7 +416,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -425,7 +425,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -434,7 +434,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -443,7 +443,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -452,7 +452,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -461,7 +461,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -470,7 +470,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -479,7 +479,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -488,7 +488,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -497,7 +497,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -506,7 +506,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -515,7 +515,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -524,7 +524,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -533,7 +533,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -542,7 +542,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -551,7 +551,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -560,7 +560,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -569,7 +569,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -578,7 +578,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -587,7 +587,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -596,7 +596,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -605,7 +605,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -614,7 +614,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -623,7 +623,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -632,7 +632,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -641,7 +641,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -650,7 +650,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -659,7 +659,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -668,7 +668,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -677,7 +677,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -686,7 +686,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -695,7 +695,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -704,7 +704,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -713,7 +713,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -722,7 +722,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -731,7 +731,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -740,7 +740,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -749,7 +749,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -758,7 +758,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -767,7 +767,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -776,7 +776,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -785,7 +785,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -794,7 +794,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -803,7 +803,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -812,7 +812,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -821,7 +821,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -830,7 +830,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -839,7 +839,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -848,7 +848,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -857,7 +857,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -866,7 +866,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -875,7 +875,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -884,7 +884,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -893,7 +893,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -902,7 +902,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -911,7 +911,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
     {
       id: '#12344477',
@@ -920,7 +920,7 @@ export class OrderListComponent {
       sport: 'Football 5x5',
       date: 'May 25, 2023',
       amount: '1500 EGP',
-      status: 'Done'
+      statusOrder: 'Done'
     },
 
   ];

@@ -65,8 +65,9 @@
     --surface-variant: #A0AEC0;
 
     --badge-accepted: #34C759;
-    --badge-pending: #CABDFF;
+    --badge-pending: #e5e6ff;
     --badge-cancelled: #FEE2E2;
+    --badge-progress: #e5e6ff;
     --highlight-cyan: #00F0FF;
     --text-main: #111827;
     --filter-border: #D1D5DB;

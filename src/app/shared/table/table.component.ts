@@ -79,4 +79,10 @@ export class TableComponent {
   trackByPage(index: number, page: number): number {
     return page;
   }
+
+  changeStatus(row: any, newStatus: string) {
+  row.statusReq = newStatus;
+  console.log(`Changed status to ${newStatus}`, row);
+}
+
 }

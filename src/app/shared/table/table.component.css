@@ -133,6 +133,11 @@
   color: var(--primary-light);
 }
 
+.status-progress {
+  background-color: var(--badge-progress);
+  color: var(--primary);
+}
+
 /* Pagination Container */
 .pagination-container {
   display: flex;

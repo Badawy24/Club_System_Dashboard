@@ -10,8 +10,20 @@
         <option value="accepted">Accepted</option>
         <option value="canceled">Canceled</option>
       </select>
-      <svg class="dropdown-icon" width="12" height="8" viewBox="0 0 12 8" fill="none">
-        <path d="M1 1.5L6 6.5L11 1.5" stroke="#666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <svg
+        class="dropdown-icon"
+        width="12"
+        height="8"
+        viewBox="0 0 12 8"
+        fill="none"
+      >
+        <path
+          d="M1 1.5L6 6.5L11 1.5"
+          stroke="#666"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
       </svg>
     </div>
   </div>
@@ -21,40 +33,108 @@
     <table class="table">
       <thead>
         <tr>
-          <th *ngFor="let col of columns" class="table-header-cell">{{ col.label }}</th>
+          <th *ngFor="let col of columns" class="table-header-cell">
+            {{ col.label }}
+          </th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let row of pagedData()" class="table-row">
           <td *ngFor="let col of columns" class="table-cell">
             <ng-container [ngSwitch]="col.key">
-          
-              <span *ngSwitchCase="'status'" class="status-badge"
+              <span
+                *ngSwitchCase="'statusOrder'"
+                class="status-badge"
                 [ngClass]="{
                   'status-done': row[col.key] === 'Done',
                   'status-pending': row[col.key] === 'Pending',
                   'status-accepted': row[col.key] === 'Accepted',
-                  'status-canceled': row[col.key] === 'Canceled' || row[col.key] === 'Cancelled'
-                }">
+                  'status-canceled': row[col.key] === 'Canceled'
+                }"
+              >
                 {{ row[col.key] }}
               </span>
-          
+              <!-- <span *ngSwitchCase="'statusReq'" class="status-badge"
+                [ngClass]="{
+                  'status-done': row[col.key] === 'Accepted',
+                  'status-pending': row[col.key] === 'Pending',
+                  'status-canceled': row[col.key] === 'Canceled'
+                }">
+                {{ row[col.key] }}
+              </span> -->
+              <span *ngSwitchCase="'statusReq'">
+                <span
+                  class="status-badge"
+                  [ngClass]="{
+                    'status-done': row[col.key] === 'Accepted',
+                    'status-pending': row[col.key] === 'Pending',
+                    'status-canceled': row[col.key] === 'Canceled'
+                  }"
+                  *ngIf="row[col.key] === 'Canceled'"
+                >
+                  {{ row[col.key] }}
+                </span>
+
+                <div class="dropdown" *ngIf="row[col.key] !== 'Canceled'">
+                  <button
+                    class="status-badge border-0 dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    [ngClass]="{
+                      'status-done': row[col.key] === 'Accepted',
+                      'status-pending': row[col.key] === 'Pending'
+                    }"
+                  >
+                    {{ row[col.key] }}
+                  </button>
+
+                  <ul class="dropdown-menu" style="width: 250px; padding-right: 20px">
+                    <li *ngIf="row[col.key] === 'Pending'">
+                      <a
+                        class="dropdown-item status-badge status-progress my-1 mx-2 rounded-1"
+                        (click)="changeStatus(row, 'Accepted')"
+                      >
+                        Accept Request
+                      </a>
+                    </li>
+                    <li
+                      *ngIf="
+                        row[col.key] === 'Pending' ||
+                        row[col.key] === 'Accepted'
+                      "
+                    >
+                      <a
+                        class="dropdown-item status-badge status-canceled my-1 mx-2 rounded-1"
+                        (click)="changeStatus(row, 'Canceled')"
+                      >
+                        Reject Request
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </span>
+
+              <!-- **************************************** -->
               <ng-container *ngSwitchCase="'action'">
                 <ng-container *ngIf="actionTemplate; else defaultAction">
-                  <ng-container *ngTemplateOutlet="actionTemplate; context: { $implicit: row }"></ng-container>
+                  <ng-container
+                    *ngTemplateOutlet="
+                      actionTemplate;
+                      context: { $implicit: row }
+                    "
+                  ></ng-container>
                 </ng-container>
                 <ng-template #defaultAction>
                   <button class="btn btn-sm btn-primary">Action</button>
                 </ng-template>
               </ng-container>
-          
+
               <span *ngSwitchDefault class="table-text">
                 {{ row[col.key] }}
               </span>
-          
             </ng-container>
           </td>
-          
         </tr>
       </tbody>
     </table>
@@ -65,25 +145,51 @@
     <div class="show-result">
       <span class="show-result-label">Show result:</span>
       <div class="select-wrapper">
-        <select [ngModel]="itemsPerPage()" (ngModelChange)="onItemsPerPageChange($event)" class="items-per-page-select">
+        <select
+          [ngModel]="itemsPerPage()"
+          (ngModelChange)="onItemsPerPageChange($event)"
+          class="items-per-page-select"
+        >
           <option value="7">7</option>
           <option value="10">10</option>
           <option value="15">15</option>
           <option value="20">20</option>
         </select>
-        
-        <svg class="select-icon" width="12" height="8" viewBox="0 0 12 8" fill="none">
-          <path d="M1 1.5L6 6.5L11 1.5" stroke="#666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <svg
+          class="select-icon"
+          width="12"
+          height="8"
+          viewBox="0 0 12 8"
+          fill="none"
+        >
+          <path
+            d="M1 1.5L6 6.5L11 1.5"
+            stroke="#666"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
         </svg>
       </div>
     </div>
-    
+
     <nav aria-label="Table pagination" class="pagination-nav">
       <ul class="pagination">
         <li class="page-item" [class.disabled]="currentPage() === 1">
-          <a class="page-link nav-arrow" (click)="changePage(currentPage() - 1)" [attr.aria-disabled]="currentPage() === 1">
+          <a
+            class="page-link nav-arrow"
+            (click)="changePage(currentPage() - 1)"
+            [attr.aria-disabled]="currentPage() === 1"
+          >
             <svg width="6" height="10" viewBox="0 0 6 10" fill="none">
-              <path d="M5 9L1 5L5 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path
+                d="M5 9L1 5L5 1"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
           </a>
         </li>
@@ -94,14 +200,29 @@
           [class.ellipsis]="page === -1"
         >
           <span *ngIf="page === -1" class="page-ellipsis">...</span>
-          <a *ngIf="page !== -1" class="page-link" (click)="changePage(page)" [attr.aria-current]="currentPage() === page ? 'page' : null">
+          <a
+            *ngIf="page !== -1"
+            class="page-link"
+            (click)="changePage(page)"
+            [attr.aria-current]="currentPage() === page ? 'page' : null"
+          >
             {{ page }}
           </a>
         </li>
         <li class="page-item" [class.disabled]="currentPage() === totalPages">
-          <a class="page-link nav-arrow" (click)="changePage(currentPage() + 1)" [attr.aria-disabled]="currentPage() === totalPages">
+          <a
+            class="page-link nav-arrow"
+            (click)="changePage(currentPage() + 1)"
+            [attr.aria-disabled]="currentPage() === totalPages"
+          >
             <svg width="6" height="10" viewBox="0 0 6 10" fill="none">
-              <path d="M1 1L5 5L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path
+                d="M1 1L5 5L1 9"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
           </a>
         </li>
@@ -109,4 +230,3 @@
     </nav>
   </div>
 </div>
-
